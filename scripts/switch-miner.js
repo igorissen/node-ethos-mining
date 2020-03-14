@@ -71,7 +71,7 @@ const updateEthOSLocalConfiguration = async (mostProfitableCoin, coinSettings, a
     `${algorithmSettings.flags ? 'flags ' + algorithmSettings.flags : ''}\n` +
     `globalfan ${algorithmSettings.globalfan}\n` +
     `autoreboot ${algorithmSettings.autoreboot}\n` +
-    `custompanel ${environment.neam_rig_name + environment.neam_private_key}\n`;
+    `custompanel ${env.userRigName + env.userPrivateKey}\n`;
 
   if (algorithmSettings.dualminer === 'enabled') {
     configuration +=
