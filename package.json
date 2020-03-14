@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "ethos-mining",
+  "version": "1.0.0",
+  "scripts": {
+    "backup": "node scripts/backup.js",
+    "reset": "node scripts/reset.js",
+    "restart-miner": "node scripts/restart-miner.js",
+    "switch-miner": "node scripts/switch-miner.js"
+  },
+  "author": "Ismael Gorissen <ismael.gorissen@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "await-to-js": "2.1.1",
+    "axios": "0.19.2",
+    "bluebird": "3.7.2",
+    "http-status": "1.4.2"
+  }
+}
