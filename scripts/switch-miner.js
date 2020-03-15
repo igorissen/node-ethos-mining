@@ -40,13 +40,17 @@ const fetchMostProfitableCoins = async () => {
     );
   }
 
-  return filterMostProfitableCoins(
-    response.data.coins,
-    new Set(env.userCryptocurrencies.map((item) => item.toLowerCase()))
-  );
+  return filterMostProfitableCoins(response.data.coins, new Set(env.userCoins.map((item) => item.toLowerCase())));
 };
 
 const findMostProfitableCoin = (mostProfitableCoins) => {
+  if (env.userSelectedCoin) {
+    const coin = mostProfitableCoins.find((coin) => coin.tag.toLowerCase() === env.userSelectedCoin.toLowerCase());
+    if (coin) {
+      return coin;
+    }
+  }
+  
   return mostProfitableCoins.reduce((keep, coin) => {
     if (!keep) {
       return coin;
